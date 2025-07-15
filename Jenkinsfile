@@ -1,19 +1,14 @@
-pipeline{
+ pipeline{
     agent any
+    environment{
+        name='siva'
+        course = 'Devops'
+    }
     stages{
-        stage('build'){
+        stage('Build'){
             steps{
-                echo "build success"
-            }
-        }
-        stage('Test'){
-            steps{
-                echo "Test success"
-            }
-        }
-        stage('deploy'){
-            steps{
-                echo "deploy success"
+                echo "This is ${name}"
+                echo "This is ${course}"
             }
         }
     }
