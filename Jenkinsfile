@@ -5,6 +5,9 @@
     environment{
         name = 'siva'
     }
+    triggers{
+        pollSCM('* * * * *')
+    }
     stages{
         stage('build'){
             environment{
