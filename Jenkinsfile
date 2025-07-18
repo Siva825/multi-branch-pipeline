@@ -5,6 +5,9 @@
     environment{
         name ='siva'
     }
+    triggers{
+        githubPush()
+    }
     stages{
         stage('build'){
             when{
