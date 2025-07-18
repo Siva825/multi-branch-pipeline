@@ -1,4 +1,3 @@
-
  pipeline{
     agent{
         label 'java-slave'
@@ -7,7 +6,7 @@
        git_creds = credentials('Siva825_git_creds')
     }
     triggers{
-        githubpush()
+        githubPush()
     }
     stages{
         stage('build'){
