@@ -9,12 +9,12 @@
     stages{
         stage('build'){
             environment{
-                class = 'mca'
+                course = 'mca'
             }
             steps{
                 echo "my name is ${name}"
                 echo "my roll no is ${roll no}"
-                echo "class : ${class}"
+                echo "class : ${course}"
             }
         }
     }
