@@ -1,7 +1,5 @@
  pipeline {
-    agent {
-        label 'java-slave'
-    }
+    agent any
     environment{
         name = 'siva'
         roll no = '26'
