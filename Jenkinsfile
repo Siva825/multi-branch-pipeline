@@ -1,16 +1,27 @@
-
-pipeline{
+ pipeline{
     agent {
         label 'java-slave'
     }
-    triggers{
-        githubPush()
+    environment{
+        name = 'siva'
     }
     stages{
         stage('build'){
             steps{
-                echo 'my name is sivani'
+                echo "my name is ${name}" 
             }
+        
         }
     }
-}
+
+    post{
+        always{
+            echo "result showing"
+        }
+        success{
+            echo " build success"
+        }
+        failure{
+            echo " build fail"
+        }
+}}
