@@ -1,27 +1,16 @@
  pipeline{
-    agent {
+    agent{
         label 'java-slave'
     }
     environment{
-        name = 'siva'
+       git-creds =credentials('Siva825_git_creds')
     }
     stages{
         stage('build'){
             steps{
-                echo "my name is ${name}" 
+                echo "displaying credentials"
+                echo "git credentials ${git-creds}"
             }
-        
         }
     }
-
-    post{
-        always{
-            echo "result showing"
-        }
-        success{
-            echo " build success"
-        }
-        failure{
-            echo " build fail"
-        }
-}}
+}
