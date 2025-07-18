@@ -3,16 +3,15 @@
         label 'java-slave'
     }
     environment{
-       git_creds = credentials('Siva825_git_creds')
-    }
-    triggers{
-        githubPush()
+        name ='siva'
     }
     stages{
         stage('build'){
+            when{
+                name: 'name', value:'siva'
+            }
             steps{
-                echo "displaying credential"
-                echo "git credentials ${git_creds}"
+                echo "build sucess"
             }
         }
     }
