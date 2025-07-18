@@ -11,7 +11,7 @@
     stages{
         stage('build'){
             steps{
-                echo "displaying credentials"
+                echo "displaying credential"
                 echo "git credentials ${git_creds}"
             }
         }
