@@ -16,6 +16,7 @@
             steps{
                 echo "my name is ${name}"
                 echo "course name : ${course}"
+                echo "completed"
             }
         }
     }
