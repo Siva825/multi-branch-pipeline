@@ -1,20 +1,16 @@
- pipeline{
+ pipeline {
     agent {
         label 'java-slave'
     }
-    environment{
-        name = 'siva'
-        course = "Devops"
-    }
     triggers{
-        cron('* * * * *')
+        pollSCM('* * * * *')
     }
     stages{
         stage('build'){
             steps{
-                echo "my name is ${name}"
-                echo "course name is ${course}"
+                echo "hi this is siva"
             }
         }
+
     }
 }
