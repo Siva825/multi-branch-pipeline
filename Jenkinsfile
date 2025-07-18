@@ -8,7 +8,7 @@
     stages{
         stage('build'){
             steps{
-                echo "my name is ${nam}" 
+                echo "my name is ${name}" 
             }
         
         }
