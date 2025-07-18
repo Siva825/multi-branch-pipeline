@@ -1,17 +1,16 @@
- pipeline {
+
+pipeline{
     agent {
         label 'java-slave'
     }
-    /*
     triggers{
-        pollSCM('* * * * *')
-    }*/
+        githubPush()
+    }
     stages{
         stage('build'){
             steps{
-                echo "hi this is siva"
+                echo 'my name is siva'
             }
         }
-
     }
 }
