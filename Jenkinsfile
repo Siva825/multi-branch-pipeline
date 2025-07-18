@@ -1,4 +1,4 @@
- pipeline{
+pipeline{
     agent{
         label 'java-slave'
     }
@@ -11,6 +11,7 @@
     stages{
         stage('build'){
             when{
+                branch 'feature'
                 environment name: 'name', value:'siva'
             }
             steps{
