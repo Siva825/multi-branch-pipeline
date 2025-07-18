@@ -11,7 +11,7 @@ pipeline{
     stages{
         stage('build'){
             when{
-                branch 'feature'
+                branch 'main'
                 environment name: 'name', value:'siva'
             }
             steps{
