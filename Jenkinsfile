@@ -4,19 +4,16 @@
     }
     environment{
         name = 'siva'
+        course = "Devops"
     }
     triggers{
-        pollSCM('* * * * *')
+        buildPeriodically('* * * * *')
     }
     stages{
         stage('build'){
-            environment{
-                course= 'Devops'
-            }
             steps{
                 echo "my name is ${name}"
-                echo "course name : ${course}"
-                echo "completed"
+                echo "course name is ${course}"
             }
         }
     }
