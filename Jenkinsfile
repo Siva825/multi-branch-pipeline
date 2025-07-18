@@ -7,7 +7,7 @@
         course = "Devops"
     }
     triggers{
-        buildPeriodically('* * * * *')
+        cron('* * * * *')
     }
     stages{
         stage('build'){
