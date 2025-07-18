@@ -1,18 +1,13 @@
  pipeline {
-    agent any
-    environment{
-        name = 'siva'
-        roll no = '26'
+    agent {
+        label 'java-slave'
     }
     stages{
         stage('build'){
-            environment{
-                course = 'mca'
-            }
             steps{
-                echo "my name is ${name}"
-                echo "my roll no is ${roll no}"
-                echo "class : ${course}"
+                echo "my name is  "
+                echo "my roll no is  "
+                echo "class : "
             }
         }
     }
