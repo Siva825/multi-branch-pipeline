@@ -11,7 +11,7 @@
     stages{
         stage('build'){
             when{
-                environment name= 'name', value='siva'
+                environment name: 'name', value:'siva'
             }
             steps{
                 echo "build sucess"
