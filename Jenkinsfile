@@ -12,7 +12,7 @@
         stage('test'){
             when {
                 allOf{
-                    branch 'main'
+                    branch 'mains'
                     environment name:'name',value:'siva'
                 }
             }
