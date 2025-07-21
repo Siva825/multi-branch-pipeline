@@ -1,22 +1,25 @@
-pipeline{
-    agent{
-        label 'java-slave'
-    }
-    environment{
-        name ='siva'
-    }
-    triggers{
-        githubPush()
-    }
+ pipeline{
+    agent any
     stages{
         stage('build'){
-            when{
-                branch 'main'
-                environment name: 'name', value:'siva'
-            }
             steps{
-                echo "build sucess"
+                echo "build success"
             }
         }
+        stage('scans'){
+            parallel{
+                stage('test'){
+                    steps{
+                        echo "test success"
+                    }
+                }
+                stage('deploy'){
+                    steps{
+                        echo "deploy success"
+                    }
+                }
+            }
+        }
+         
     }
 }
