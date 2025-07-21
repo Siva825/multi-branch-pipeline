@@ -3,19 +3,22 @@
     environment{
         name = 'siva'
     }
-     
     stages{
         stage('build'){
-            when{
-                anyOf {
-                    branch 'main'
-                    environment name:'names', value:'siva'
-                }
-            }
             steps{
                 echo "build success"
             }
         }
+        stage('test'){
+            when {
+                allOf{
+                    branch 'main'
+                    environment name:'name',value:'siva'
+                }
+            }
+            steps{
+                echo "test success"
+            }
+        }
     }
 }
-
