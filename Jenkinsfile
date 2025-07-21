@@ -9,7 +9,7 @@
             when{
                 anyOf {
                     branch 'mains'
-                    environment name:'name', value:'siva'
+                    environment name:'names', value:'siva'
                 }
             }
             steps{
