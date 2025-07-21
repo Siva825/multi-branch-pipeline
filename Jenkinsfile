@@ -1,3 +1,4 @@
+// anyOf
 pipeline{
     agent any
     environment{
@@ -11,7 +12,7 @@ pipeline{
             when{
                 anyOf {
                     branch 'mains'
-                    environment name:'names', value:'siva'
+                    environment name:'name', value:'siva'
                 }
             }
             steps{
