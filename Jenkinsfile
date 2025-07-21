@@ -8,7 +8,7 @@
         stage('build'){
             when{
                 anyOf {
-                    branch 'mains'
+                    branch 'main'
                     environment name:'names', value:'siva'
                 }
             }
