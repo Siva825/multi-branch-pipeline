@@ -6,7 +6,7 @@
                 echo "build success"
             }
         }
-        stage('scans'){
+         
             parallel{
                 stage('test'){
                     steps{
@@ -19,7 +19,7 @@
                     }
                 }
             }
-        }
+        
          
     }
 }
