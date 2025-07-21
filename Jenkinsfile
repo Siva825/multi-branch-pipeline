@@ -1,12 +1,9 @@
-// anyOf
-pipeline{
+ pipeline{
     agent any
     environment{
         name = 'siva'
     }
-    triggers{
-        cron('* * * * *')
-    }
+     
     stages{
         stage('build'){
             when{
@@ -21,3 +18,4 @@ pipeline{
         }
     }
 }
+
