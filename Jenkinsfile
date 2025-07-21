@@ -1,8 +1,5 @@
- 
- pipeline{
-    agent{
-        label'java-slave'
-    }
+pipeline{
+    agent any
     parameters{
         string(name:'Applicant_name',description:'',defaultValue:'Devops')
         booleanParam(name:'RUN_TESTS', description:'would you like to run tests',defaultValue:true)
