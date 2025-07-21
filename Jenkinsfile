@@ -2,7 +2,7 @@
     agent any
     parameters{
         string(name:'Applicant_name',description:'',defaultValue:'Devops')
-        booleanParam(name:'RUN_TESTS', description:'would you like to run tests',defaultValue:'yes')
+        booleanParam(name:'RUN_TESTS', description:'would you like to run tests',defaultValue:'True')
         choice(name:'Env_name',description:'',choices:['dev', 'test', 'prod'])
         password(name:'Password',description:'Enter your password here',defaultValue:'secretpassword')
     }
