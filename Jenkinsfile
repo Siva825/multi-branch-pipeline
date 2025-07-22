@@ -1,6 +1,6 @@
  pipeline{
-    agent {
-        label 'java-slave'
+    agent{
+        label'java-slave'
     }
     stages{
         stage('build'){
@@ -8,16 +8,38 @@
                 echo "build success"
             }
         }
-        stage('Test'){
+        stage('test'){
             steps{
-                echo "Test success"
+                echo "test success"
             }
         }
-        stage('deploy'){
+        stage('dockerbuild'){
             steps{
-                echo "deploy success"
+                echo "dockerbuild success"
+            }
+        }
+        stage('devdeploy'){
+            steps{
+                echo "devdeploy success"
+            }
+        }
+        stage('stagedeploy'){
+            steps{
+                echo "stagedeploy success"
+            }
+        }
+        stage(' proddeploy'){
+            options{
+                timeout(time:300,unit:'SECONDS')
+            }
+            input{
+                message"Doing prod deployments"
+                ok'yes'
+                submitter'siva,prasad'
+            }
+            steps{
+                echo "proddeploy success"
             }
         }
     }
 }
-
