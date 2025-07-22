@@ -1,4 +1,4 @@
-pipeline{
+ pipeline{
     agent{
         label'java-slave'
     }
@@ -29,16 +29,19 @@ pipeline{
             }
         }
         stage(' proddeploy'){
-            options{
+            /*options{
                 timeout(time:300,unit:'SECONDS')
             }
             input{
                 message"Doing prod deployments"
                 ok'yes'
                 submitter'siva'
-            }
+            }*/
             steps{
-                echo "proddeploy success"
+                timeout(time:300,unit:'SECONDS'){
+                    input message:"Doing prod deployments",ok:'yes',submitter:'siva'
+                    echo "proddeploy success"
+                }   
             }
         }
     }
