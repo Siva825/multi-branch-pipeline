@@ -38,7 +38,7 @@
                 submitter'siva'
             }*/
             steps{
-                timeout(time:300,unit:'SECONDS'){
+                timeout(time:30,unit:'SECONDS'){
                     input message:"Doing prod deployments",ok:'yes',submitter:'siva'
                     echo "proddeploy success"
                 }   
