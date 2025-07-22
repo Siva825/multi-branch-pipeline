@@ -1,46 +1,23 @@
  pipeline{
-    agent any
+    agent {
+        label 'java-slave'
+    }
     stages{
         stage('build'){
             steps{
-                echo " build success "
+                echo "build success"
             }
         }
-        stage('test'){
+        stage('Test'){
             steps{
-                echo 'test success'
+                echo "Test success"
             }
         }
-        stage('Docker build'){
+        stage('deploy'){
             steps{
-                echo 'Docker build success'
-            }
-        }
-        stage('Dev deploy'){
-            steps{
-                echo "devdeploy success"
-            }
-        }
-        stage('Test deploy'){
-            steps{
-                echo " Test deploy success"
-            }
-        }
-        stage('Stage deploy'){
-            when {
-                branch 'release-*'
-            }
-            steps{
-                echo "Stage deploy success"
-            }
-        }
-        stage('Production deploy'){
-            when{
-                tag pattern: "v\\d{1,2}.\\d{1,2}.\\d{1,2}", comparator: "REGEXP"
-            }
-            steps{
-                echo "production deploy success"
+                echo "deploy success"
             }
         }
     }
 }
+
