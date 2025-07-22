@@ -6,6 +6,7 @@ pipeline{
         stage('build'){
             steps{
                 echo "build success"
+                sh 'hostname -i'
             }
             post{
                 always{
