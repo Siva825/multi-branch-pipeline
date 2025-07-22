@@ -1,4 +1,4 @@
- pipeline{
+pipeline{
     agent{
         label'java-slave'
     }
@@ -35,7 +35,7 @@
             input{
                 message"Doing prod deployments"
                 ok'yes'
-                submitter'siva,prasad'
+                submitter'siva'
             }
             steps{
                 echo "proddeploy success"
