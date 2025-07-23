@@ -1,20 +1,19 @@
  pipeline{
     agent any
-    parameters{
-        string(name:'Application',description:'',defaultValue:'Devops')
-        booleanParam(name:'RUN_TESTS', description:'would you like to run tests',defaultValue:true)
-        choice(name:'Env_name',description:'',choices:['dev', 'test', 'prod'])
-        password(name:'Password',description:'Enter your password here',defaultValue:'secretpassword')
+    environment{
+        name = 'siva'
     }
+     
     stages{
-        stage('Build'){
+        stage('build'){
+            when{
+                anyOf {
+                    branch 'main'
+                    environment name:'names', value:'siva'
+                }
+            }
             steps{
-                echo "build is ongoing"
-                echo "${params.Application}"
-                echo "${params.RUN_TESTS}"
-                echo "${params.Env_name}"
-                echo "${params.Password}"
-
+                echo "build success"
             }
         }
     }
