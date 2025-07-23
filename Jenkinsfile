@@ -1,23 +1,20 @@
-pipeline{
-    agent {
-        label 'java-slave'
+ pipeline{
+    agent any
+    parameters{
+        string(name:'Applicant_name',description:'',defaultValue:'Devops')
+        booleanParam(name:'RUN_TESTS', description:'would you like to run tests',defaultValue:true)
+        choice(name:'Env_name',description:'',choices:['dev', 'test', 'prod'])
+        password(name:'Password',description:'Enter your password here',defaultValue:'secretpassword')
     }
     stages{
-        stage('build'){
+        stage('Build'){
             steps{
-                echo "build success"
-                sh 'hostname -i'
-            }
-            post{
-                always{
-                    echo "build is running" 
-                }
-                success{
-                    echo "build successful"
-                }
-                failure{
-                    echo "build failure"
-                }
+                echo "build is ongoing"
+                echo "${params.Applicant_name}"
+                echo "${params.RUN_TESTS}"
+                echo "${params.Env_name}"
+                echo "${params.Password}"
+
             }
         }
     }
